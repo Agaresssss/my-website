@@ -38,6 +38,14 @@ const FormEmail = () => {
         validationSchema={mailSchema}
         onSubmit={async (values, { setSubmitting }) => {
           console.log(values);
+          await setTimeout(() => {
+              toast({
+                title: "Message sent.",
+                description: "We've received your message.",
+                status: "success",
+                duration: 5000,
+              })
+          }, 2000);
         }}
       >
         <Form>
@@ -133,7 +141,7 @@ export default FormEmail;
 
 let buttonStyle = {
   color: "#FFFFFF",
-  background : "linear-gradient(to right, #4b6cb7 0%, #17141B  51%, #4b6cb7  100%)",
+  background : "linear-gradient(to right, #4b6cb7 0%, #4d00ab  51%, #4b6cb7  100%)",
   "text-transform": 'uppercase',
   transition: "0.5s",
   "background-size": "200% auto",
@@ -157,6 +165,7 @@ let formLayout = {
   borderRadius: "8px",
   border : '1px solid #FFFFFF',
   width :"450px",
+  height : 'auto',
   padding: '25px'
 }
 

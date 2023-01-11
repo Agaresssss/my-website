@@ -18,8 +18,8 @@ const Home = () => {
             <Heading sx={heading}>{data.intro2}</Heading>
             <Text sx={subHeading}>{data.occupation}</Text>
           </VStack>
-            <Flex justifyContent='center' w='573px' h='573px'>
-            <Box sx={gradientShape} />
+            <Flex  justifyContent='center' w='573px'   >
+            <Box  sx={gradientShape} />
             </Flex>
           
         </HStack>
@@ -37,7 +37,7 @@ let gradientShape = {
     "linear-gradient(to bottom, rgba(221,71,89,0.8),rgba(221,71,89,0)) 1",
 
   // position: "absolute",
-  left: "1379.38px",
+  
   //top: "295px",
 
   "mix-blend-mode": "normal",

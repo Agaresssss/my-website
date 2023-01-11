@@ -1,5 +1,6 @@
 import {
   Box,
+  VStack,
   HStack,
   Text,
   Flex,
@@ -9,6 +10,7 @@ import {
   ListIcon,
   OrderedList,
   UnorderedList,
+  Heading,
 } from "@chakra-ui/react";
 import {
   AiOutlinePhone,
@@ -30,9 +32,13 @@ const contactData = {
 
 const Contact = () => {
   return (
-    <Box w="100%" h="100vh" bg="#17141B" justifyContent='center' >
-      <Flex width='100%' justifyContent='space-around' marginTop='100px'>
+    <Box w="100%" h="100vh" bg="#17141B" justifyContent='center' paddingTop='170px' >
+      
+      <Flex width='100%' justifyContent='space-around'>
+      <VStack justify='flex-start' spacing='50px'>
+      <Heading inlineSize='100%' color='#FFFFFF'>CONTACT</Heading>
       <List spacing="10px" color="#ffffff" sx={listStyle} >
+      
         <ListItem>
           <ListIcon as={AiOutlinePhone} />
           {contactData.phone}
@@ -59,6 +65,9 @@ const Contact = () => {
           {contactData.linkedin}
         </ListItem>
       </List>
+
+      </VStack>
+      
       <FormEmail />
       </Flex>
       

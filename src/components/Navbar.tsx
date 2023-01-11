@@ -109,7 +109,7 @@ let menuFont = {
   fontWeight: "normal",
   fontSize: "16px",
   letterSpacing: "0.2em",
-
+  transition : "all 0.3",
   _hover: {
     fontWeight: "bold",
     textShadow: "0px 0px 10px rgba(255, 255, 255);",
