@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<PageContainer />} loader = {<h1>Loading...</h1>} >
+        <Route path="/" element={<PageContainer />}  >
           <Route path="/" index element={<Home />} />
           <Route path="about" element={<h1>About</h1>} />
           <Route path="portfolio" element={<h1>Portfolio</h1>} />
