@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.4.6",
+    "@chakra-ui/react": "^2.4.7",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@popperjs/core": "^2.11.6",
@@ -17,7 +17,7 @@
     "date-fns": "^2.29.3",
     "emailjs": "^4.0.1",
     "formik": "^2.2.9",
-    "framer-motion": "^8.4.0",
+    "framer-motion": "^8.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",

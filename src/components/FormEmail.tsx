@@ -17,9 +17,10 @@ import {
 } from "@chakra-ui/react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import Axios from "axios";
+import { useState } from "react";
 
 const FormEmail = () => {
+  const [loading,setLoading] = useState(false)
   const toast = useToast();
   const mailSchema = Yup.object().shape({
     name: Yup.string().required("Required").min(3,"more than 3 characters").max(40,"less than 40 characters"),
@@ -38,13 +39,15 @@ const FormEmail = () => {
         validationSchema={mailSchema}
         onSubmit={async (values, { setSubmitting }) => {
           console.log(values);
+          setLoading(true)
           await setTimeout(() => {
               toast({
-                title: "Message sent.",
-                description: "We've received your message.",
+                title: "Success",
+                description: "I'm received your message.",
                 status: "success",
                 duration: 5000,
               })
+              setLoading(false)
           }, 2000);
         }}
       >
@@ -126,7 +129,7 @@ const FormEmail = () => {
               </FormControl>
             )}
           </Field>
-          <Button type="submit" sx= {buttonStyle} >
+          <Button type="submit" sx= {buttonStyle} isLoading = {loading} >
             SEND ME
           </Button>
           </Stack>

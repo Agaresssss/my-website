@@ -33,8 +33,8 @@ const contactData = {
 const Contact = () => {
   return (
     <Box w="100%" h="100vh" bg="#17141B" justifyContent='center' paddingTop='170px' >
-      
-      <Flex width='100%' justifyContent='space-around'>
+      <i class="fi fi-rs-shuttlecock"></i>
+      <Flex width='100%' justifyContent='space-evenly'>
       <VStack justify='flex-start' spacing='50px'>
       <Heading inlineSize='100%' color='#FFFFFF'>CONTACT</Heading>
       <List spacing="10px" color="#ffffff" sx={listStyle} >
