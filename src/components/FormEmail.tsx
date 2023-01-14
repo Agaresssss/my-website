@@ -98,7 +98,7 @@ const FormEmail = () => {
                     
                     id="head"
                    variant="flushed"
-                    placeholder="Topic"
+                    placeholder="Subject"
                     sx = {inputLayout}
                     maxLength = {40}
                   />
@@ -165,8 +165,10 @@ let buttonStyle = {
 }
 
 let formLayout = {
-  borderRadius: "8px",
-  border : '1px solid #FFFFFF',
+  borderRadius: "0px",
+  border : '1px solid',
+  "border-image" : 'linear-gradient(45deg,rgba(221, 71, 89, 0.64) 0%,rgba(54, 88, 184, 0.64) 100% ) 1',
+  opacity: 0.8,
   width :"450px",
   height : 'auto',
   padding: '25px'
