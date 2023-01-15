@@ -19,35 +19,36 @@ import {
 import { format, compareAsc } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import FrameCard from "../components/FrameCard";
+import Timeline from "../components/Timeline";
 
 const data = {
   imagePath: "src/assets/DSCF1733_20.jpg",
   dob: new Date(2001, 2, 14),
   interests: [
     {
-      icon: "src/assets/flaticon/001-desktop.png",
+      icon: "src/assets/flaticon/001-desktop.svg",
       title: "Computer",
       detail:
         "I'm interested in Computer, especially in hardware. I like to build my own computer.",
     },
     {
-      icon: "src/assets/flaticon/003-robot.png",
+      icon: "src/assets/flaticon/003-robot 1.svg",
       title: "Technology",
       detail: "I'm like to learn about new technology",
     },
     {
-      icon: "src/assets/flaticon/005-shuttlecock.png",
+      icon: "src/assets/flaticon/005-shuttlecock.svg",
       title: "Sport",
       detail: "I like to play sport, especially badminton with my friends",
     },
     {
-      icon: "src/assets/flaticon/004-adjustment.png",
+      icon: "src/assets/flaticon/004-adjustment 1.svg",
       title: "Music",
       detail:
         "In a freetime. I will listen to music to relax and sometime I learn how to produce music from  youtube.",
     },
     {
-      icon: "src/assets/flaticon/002-camera.png",
+      icon: "src/assets/flaticon/002-camera 1.svg",
       title: "Photography",
       detail:
         "I love take a picture of nature and people. I like to take a picture of sunset and sunrise.",
@@ -69,9 +70,9 @@ const About = () => {
         templateColumns="repeat(5, 1fr)"
         gap={10}
       >
-        <GridItem rowSpan={3} colSpan={2} w='100%'>
+        <GridItem rowSpan={3} colSpan={2} >
           <Center>
-            <Image alt="owner" src={data.imagePath} sx={imgLayout} />
+            <Image alt="owner" src={data.imagePath} sx={imgLayout}  />
           </Center>
         </GridItem>
         <GridItem colSpan={3}>
@@ -140,9 +141,18 @@ const About = () => {
           </Container>
         </GridItem>
       </Grid>
-      <Heading marginTop="100px" sx={headSytle}>
+      <Heading marginTop="80px" sx={headSytle}>
         EDUCATION
       </Heading>
+      <Box  marginTop='120px' fontSize="18px" fontWeight="light" color='#FFFFFF '  w='100%' >
+        <Timeline/>
+      </Box>
+      <Heading marginTop="200px" sx={headSytle}>
+        EXPERIENCE
+      </Heading>
+              <Text sx={textLayout} marginTop="100px" fontSize="18px" fontWeight="light" color='#FFFFFF '  w='100%' >
+                Card preview with animation
+              </Text>
     </Box>
   );
 };
