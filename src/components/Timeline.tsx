@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import Polygon from "./Polygon";
 import { BsHexagon } from "react-icons/bs";
+import Timelineitem from "./Timelineitem";
 
 interface dataTypes {
   year: string;
@@ -38,35 +39,27 @@ const Timeline = ({ data }: propsType) => {
     <Box w="1120px" sx={timelineLayout}>
       <Divider
         __css={{
-          top: "50%",
+          position: "absolute",
+          top: "52%",
           "border-image":
             "linear-gradient(to right,rgba(221, 71, 89, 0.64) 0%,rgba(54, 88, 184, 0.64) 50%,rgba(221, 71, 89, 0.64) 100% ) 1",
           opacity: "0.8",
+
         }}
       />
+      <Flex justify='space-evenly' position= "relative">
+      {data1.map((item)=> <Timelineitem item={item}/>)}
 
-      {data1
-        .map((item, index) => {
-          return (
-            <Box sx={timelineItem}>
-              <Box sx={timelineItemDate}>
-                <Text sx={timelineText}>{item.year}</Text>
-              </Box>
-              <Box sx={timelineItemContent}>
-                <Text sx={timelineItemContentText}>{item.name}</Text>
-              </Box>
-            </Box>
-          );
-        })
-        .reverse()}
+      </Flex>
+      
     </Box>
   );
 };
 
 let timelineLayout = {
-  position: "relative",
+  position : 'relative',
   width: "100%",
-  hight: "500px",
+  hight: "300px",
 };
 
 let timelineItem = {
@@ -150,3 +143,20 @@ let shapeGradient = {
 };
 
 export default Timeline;
+
+
+
+// {data1
+//   .map((item, index) => {
+//     return (
+//       <Box sx={timelineItem}>
+//         <Box sx={timelineItemDate}>
+//           <Text sx={timelineText}>{item.year}</Text>
+//         </Box>
+//         <Box sx={timelineItemContent}>
+//           <Text sx={timelineItemContentText}>{item.name}</Text>
+//         </Box>
+//       </Box>
+//     );
+//   })
+//   .reverse()}
