@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  Divider
+  Divider,
 } from "@chakra-ui/react";
 
 type propsType = {
@@ -21,20 +21,17 @@ type propsType = {
 
 const InterestCard = ({ icon, title, detail }: propsType) => {
   return (
-    <Card borderRadius='8px' border='1px' opacity='0.8' w="250px" h= '250px' color='#FFFFFF' >
+    <Card sx={cardLayout}>
       <CardBody>
-   
-        <Container color="#FFFFFF" fontSize = '14px' centerContent >
-        <Image
-          src={icon}
-          fallbackSrc="https://via.placeholder.com/256"
-          bgColor="#FFFFFF"
-            borderRadius="full"
-          boxSize="56px"
-            
-        />
-        
-          <Heading color="#FFFFFF" fontSize="18px" textAlign='center' marginTop = '20px'>
+        <Container color="#FFFFFF" sx={detailLayout} centerContent>
+          <Image
+            src={icon}
+            fallbackSrc="https://via.placeholder.com/256"
+            alt="activity icon"
+            boxSize="75px"
+          />
+
+          <Heading sx={titleLayout} textAlign="center" marginTop="20px">
             {title}
           </Heading>
           {detail}
@@ -42,6 +39,32 @@ const InterestCard = ({ icon, title, detail }: propsType) => {
       </CardBody>
     </Card>
   );
+};
+
+let cardLayout = {
+  width: "240px",
+  height: "250px",
+  border: "1px solid",
+  "border-image":
+    "linear-gradient(45deg,rgba(221, 71, 89, 0.64) 0%,rgba(54, 88, 184, 0.64) 100% ) 1",
+  borderOpacity: "0.8",
+  borderRadius: "0px",
+};
+
+let titleLayout = {
+  fontFamily: "Gravity",
+  fontWeight: "normal",
+  fontSize: "18px",
+  color: "#FFFFFF",
+  opacity: "0.8",
+};
+
+let detailLayout = {
+  fontFamily: "Gravity",
+  fontWeight: "light",
+  fontSize: "14px",
+  color: "#FFFFFF",
+  opacity: "0.8",
 };
 
 export default InterestCard;
