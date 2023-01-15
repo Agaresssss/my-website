@@ -32,45 +32,49 @@ const contactData = {
 
 const Contact = () => {
   return (
-    <Box w="100%" h="100vh" bg="#17141B" justifyContent='center' paddingTop='170px' >
-      <i class="fi fi-rs-shuttlecock"></i>
-      <Flex width='100%' justifyContent='space-evenly'>
-      <VStack justify='flex-start' spacing='50px'>
-      <Heading inlineSize='100%' color='#FFFFFF'>CONTACT</Heading>
-      <List spacing="10px" color="#ffffff" sx={listStyle} >
-      
-        <ListItem>
-          <ListIcon as={AiOutlinePhone} />
-          {contactData.phone}
-        </ListItem>
-        <ListItem>
-          <ListIcon as={AiOutlineMail} />
-          {contactData.mail}
-        </ListItem>
-        <ListItem>
-          <ListIcon as={AiOutlineGithub} />
-          {contactData.github}
-        </ListItem>
-        <ListItem>
-          <ListIcon as={AiFillFacebook} />
-          {contactData.facebook}
-        </ListItem>
-        <ListItem>
-          <ListIcon as={AiOutlineInstagram} />
-          {contactData.instagram}
-        </ListItem>
+    <Box
+      w="100%"
+      h="100vh"
+      bg="#17141B"
+      justifyContent="center"
+      paddingTop="170px"
+    >
+      <Flex width="100%" justifyContent="space-evenly">
+        <VStack justify="flex-start" spacing="50px">
+          <Heading inlineSize="100%" color="#FFFFFF">
+            CONTACT
+          </Heading>
+          <List spacing="10px" color="#ffffff" sx={listStyle}>
+            <ListItem>
+              <ListIcon as={AiOutlinePhone} />
+              {contactData.phone}
+            </ListItem>
+            <ListItem>
+              <ListIcon as={AiOutlineMail} />
+              {contactData.mail}
+            </ListItem>
+            <ListItem>
+              <ListIcon as={AiOutlineGithub} />
+              {contactData.github}
+            </ListItem>
+            <ListItem>
+              <ListIcon as={AiFillFacebook} />
+              {contactData.facebook}
+            </ListItem>
+            <ListItem>
+              <ListIcon as={AiOutlineInstagram} />
+              {contactData.instagram}
+            </ListItem>
 
-        <ListItem>
-          <ListIcon as={AiFillLinkedin} />
-          {contactData.linkedin}
-        </ListItem>
-      </List>
+            <ListItem>
+              <ListIcon as={AiFillLinkedin} />
+              {contactData.linkedin}
+            </ListItem>
+          </List>
+        </VStack>
 
-      </VStack>
-      
-      <FormEmail />
+        <FormEmail />
       </Flex>
-      
     </Box>
   );
 };
