@@ -37,6 +37,7 @@ const Navbar = () => {
         align="center"
         bg="#17141B"
         w="80%" position='fixed'
+        zIndex='1'
       >
         <Text sx={headerFont}>
           <Link to="/">PHUETTIPOL</Link>
