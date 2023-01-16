@@ -18,14 +18,18 @@ import {
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-
+import * as emailjs from 'emailjs'
 const FormEmail = () => {
+  
+  
+
+
   const [loading,setLoading] = useState(false)
   const toast = useToast();
   const mailSchema = Yup.object().shape({
     name: Yup.string().required("Required").min(3,"more than 3 characters").max(40,"less than 40 characters"),
     email: Yup.string().email("Invalid email").required("Required"),
-    head: Yup.string()
+    subject: Yup.string()
       .required("Required")
       .min(3, "more than 3 characters")
       .max(40, "less than 40 characters"),
@@ -35,7 +39,7 @@ const FormEmail = () => {
   return (
     <Box sx = {formLayout}>
       <Formik
-        initialValues={{ name: "", email: "", head: "", message: "" }}
+        initialValues={{ name: "", email: "", subject: "", message: "" }}
         validationSchema={mailSchema}
         onSubmit={async (values, { setSubmitting }) => {
           console.log(values);
@@ -88,15 +92,15 @@ const FormEmail = () => {
               </FormControl>
             )}
           </Field>
-          <Field name="head">
+          <Field name="subject">
             {({ field, form }: any) => (
-              <FormControl isInvalid={form.errors.head && form.touched.head}>
+              <FormControl isInvalid={form.errors.subject && form.touched.subject}>
                 
                 
                 <InputGroup {...field}>
                   <Input
                     
-                    id="head"
+                    id="subject"
                    variant="flushed"
                     placeholder="Subject"
                     sx = {inputLayout}
@@ -105,7 +109,7 @@ const FormEmail = () => {
                   <InputRightElement color="#FFFFFF" children={<Text fontFamily= 'Gravity' fontWeight='light'>{field.value.length}/40</Text>} />
                 </InputGroup>
 
-                <FormErrorMessage>{form.errors.head}</FormErrorMessage>
+                <FormErrorMessage>{form.errors.subject}</FormErrorMessage>
               </FormControl>
             )}
           </Field>
@@ -113,6 +117,7 @@ const FormEmail = () => {
             {({ field, form }: any) => (
               <FormControl
                 isInvalid={form.errors.message && form.touched.message}
+                
               >
                
                 <Textarea
@@ -125,7 +130,8 @@ const FormEmail = () => {
                   minHeight='150px'
                   maxHeight='300px'
                 />
-                <FormErrorMessage>{form.errors.message}</FormErrorMessage>
+                
+                <FormErrorMessage >{form.errors.message}</FormErrorMessage>
               </FormControl>
             )}
           </Field>
