@@ -20,6 +20,7 @@ import { format, compareAsc } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import FrameCard from "../components/FrameCard";
 import Timeline from "../components/Timeline";
+import Experience from "../components/Experience";
 
 const data = {
   imagePath: "src/assets/DSCF1733_20.jpg",
@@ -54,6 +55,20 @@ const data = {
         "I love take a picture of nature and people. I like to take a picture of sunset and sunrise.",
     },
   ],
+  experiences: [
+    {
+      img: "src/assets/portfolio-pic/modern-doc/logo.png",
+      title: "Modern doc",
+    },
+    {
+      img: "src/assets/portfolio-pic/scispec/logo1 3.png",
+      title: "ERP Scispec",
+    },
+    {
+      img: "src/assets/portfolio-pic/angel-bank/log2.png",
+      title: "Angel bank",
+    },
+  ]
 };
 
 const About = () => {
@@ -62,7 +77,7 @@ const About = () => {
   console.log();
 
   return (
-    <Box w="100%" h="100%" bg="#17141B" paddingTop="170px">
+    <Box w="100%" h="100%" bg="#17141B" paddingTop="170px" paddingBottom='100px'>
       <Heading sx={headSytle}>ABOUT</Heading>
       <Grid
         margin="100px"
@@ -150,9 +165,7 @@ const About = () => {
       <Heading marginTop="200px" sx={headSytle}>
         EXPERIENCE
       </Heading>
-              <Text sx={textLayout} marginTop="100px" fontSize="18px" fontWeight="light" color='#FFFFFF '  w='100%' >
-                Card preview with animation
-              </Text>
+             <Experience data={data.experiences} />
     </Box>
   );
 };

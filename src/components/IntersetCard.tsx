@@ -12,6 +12,7 @@ import {
   CardFooter,
   Divider,
 } from "@chakra-ui/react";
+import {motion , AnimatePresence} from 'framer-motion'
 
 type propsType = {
   icon?: string;
@@ -21,7 +22,7 @@ type propsType = {
 
 const InterestCard = ({ icon, title, detail }: propsType) => {
   return (
-    <Card sx={cardLayout}>
+    <Card sx={cardLayout} as = {motion.div}>
       <CardBody>
         <Container color="#FFFFFF" sx={detailLayout} centerContent>
           <Image
@@ -49,12 +50,16 @@ let cardLayout = {
     "linear-gradient(45deg,rgba(221, 71, 89, 0.64) 0%,rgba(54, 88, 184, 0.64) 100% ) 1",
   borderOpacity: "0.8",
   borderRadius: "0px",
+  cursor: "grab",
+  'pointer-events': 'none',
+  
 };
 
 let titleLayout = {
-  fontFamily: "Gravity",
-  fontWeight: "normal",
-  fontSize: "18px",
+  fontFamily: "Bebas Neue",
+  fontWeight: "400",
+  letterSpacing: "0.2em",
+  fontSize: "22px",
   color: "#FFFFFF",
   opacity: "0.8",
 };

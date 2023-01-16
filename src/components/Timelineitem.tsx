@@ -28,7 +28,7 @@ const Timelineitem = ({ item }: propsType) => {
           {item?.year}
         </Heading>
         <Box sx={rotateSquare} />
-        <Text sx={timelineItemName}>{item?.name}</Text>
+        <Text  sx={timelineItemName}>{item?.name}</Text>
       </VStack>
     </Box>
   );
@@ -61,6 +61,7 @@ let timelineItemYear = {
     fontWeight:"400",
 };
 let timelineItemName = {
+  textAlign : "center",
   fontSize: "30px",
   color: "#FFFFFF",
   fontWeight: "bold",
