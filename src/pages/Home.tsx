@@ -1,40 +1,72 @@
-import { Box, Flex, Text, Heading, VStack, HStack } from "@chakra-ui/react";
+import { Box, Flex, Text, Heading, VStack, HStack ,keyframes} from "@chakra-ui/react";
 import {motion,Variant} from 'framer-motion'
 import {useRef,useEffect,useState} from 'react'
 import { useFollowPointer } from "../hook/use-follow-pointer";
 
 
+const Spacer = keyframes`
+  0% { 
+    letter-spacing: 0.5em;
+  }
+  50% {
+    letter-spacing: 0.55em;
+  }
+100% {  
+  letter-spacing: 0.5em;
+ }
+    `
+const scale = keyframes`
+  0% {
+    transform: scale(1);
+    }
+    
+    50% {
+      transform: scale(1.05);
+      }
+    100% {
+      transform: scale(1);
+      `
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    }
+    100% {
+      opacity: 0.8;
+      }`
 
-const Home = () => {
-  const data = {
-    intro: `HI, EVERYBODY`,
-    intro2: ` I'M PHUETTIPOL`,
-    occupation: "INTERNSHIP",
-  };
+
+type propsType = {
+  data : {
+    intro : string,
+    intro2 : string,
+    occupation : string
+  }
+}
+
+const Home = ({data} : propsType) => {
+
+  const letterSpace = `${Spacer} 15s ease-in-out infinite`
+  const squareScale = `${scale} 2s ease-in infinite`
+
 
 
 
   return (
     <>
-      <Box  bg="#17141B" h='100%' >
+      <Box   h='100%' animation={`${fadeIn} 1s ease-in-out`}>
 
-        <HStack justify="space-between" direction="row" h = '100vh' justifyItems='flex-start' as = {motion.div}
-          initial = {{
-            opacity : 0,
-          }}
-          animate = {{
-            opacity : 0.8,
-          }}
+        <HStack justify="space-between" direction="row" h = '100vh' justifyItems='flex-start' 
+         
           
         >
-          <VStack align="start" as = {motion.div}>
+          <VStack align="start" >
             <Heading 
-            
+            animation={letterSpace}
             sx={heading}>{data.intro}</Heading>
-            <Heading as ={motion.h2}  sx={heading}>{data.intro2}</Heading>
+            <Heading animation={letterSpace}  sx={heading}>{data.intro2}</Heading>
             <Text sx={subHeading}>{data.occupation}</Text>
           </VStack>
-            <Flex  justifyContent='center' w='573px'   >
+            <Flex  justifyContent='center' w='573px' animation={squareScale}    >
             <Box  sx={gradientShape} />
             </Flex>
           
@@ -75,6 +107,7 @@ let heading = {
   fontWeight: "400",
   fontSize: "50px",
   color: "#FFFFFF",
+  justifyText: "center",
   letterSpacing: "0.5em",
 };
 export default Home;

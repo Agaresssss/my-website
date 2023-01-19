@@ -8,10 +8,12 @@ import {
   List,
   ListItem,
   Stack,
+  keyframes
 } from "@chakra-ui/react";
-import Polygon from "./Polygon";
+import { useInView } from "framer-motion";
 import { BsHexagon } from "react-icons/bs";
 import Timelineitem from "./Timelineitem";
+import { useRef } from "react";
 
 interface dataTypes {
   year: string;
@@ -22,21 +24,33 @@ type propsType = {
   data?: dataTypes[];
 };
 
-const data1 = [
-    
-  {
-    year: "2014-2019",
-    name: "Taweethapisek School",
-  },
-  {
-    year: "2020-2023",
-    name: "King Mongkut's University of Technology Thonburi",
-  },
-];
+
+const fromLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+      }`
+
+const fade = keyframes`
+  from {
+    opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+      }`
 
 const Timeline = ({ data }: propsType) => {
+const ref = useRef(null);
+const inView = useInView(ref, { once: true })
+
+
   return (
-    <Box w="1120px" sx={timelineLayout}>
+    <Box w="1120px" sx={timelineLayout} ref = {ref} animation = {inView && `${fade} 1s ease-in` } >
       <Divider
         __css={{
           position: "absolute",
@@ -48,7 +62,7 @@ const Timeline = ({ data }: propsType) => {
         }}
       />
       <Flex justify='space-evenly' position= "relative">
-      {data1.map((item)=> <Timelineitem item={item}/>)}
+      {data.map((item,index)=> <Timelineitem item={item} animation = {inView && `${fromLeft} ${(index+1)}.5s ease`}/>)}
 
       </Flex>
       

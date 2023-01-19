@@ -15,11 +15,12 @@ interface dataTypes {
 
 type propsType = {
   item?: dataTypes;
+  animation?: any;
 };
 
-const Timelineitem = ({ item }: propsType) => {
+const Timelineitem = ({ item , animation }: propsType) => {
   return (
-    <Box sx={timelineItem}>
+    <Box sx={timelineItem} animation = {animation}>
       <VStack gap="20px" sx={StackTimeline} overflow="hidden">
         <Heading
         sx = {timelineItemYear}

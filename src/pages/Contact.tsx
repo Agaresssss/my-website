@@ -11,7 +11,10 @@ import {
   OrderedList,
   UnorderedList,
   Heading,
+  keyframes,
 } from "@chakra-ui/react";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 import {
   AiOutlinePhone,
   AiOutlineMail,
@@ -30,14 +33,53 @@ const contactData = {
   linkedin: "www.linkedin.com/in/phuettipol-jjrk",
 };
 
-const Contact = () => {
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+type propsType = {
+  data: {
+    title: string;
+    description: string;
+  }[];
+};
+
+const Contact = ({ data }: propsType) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  const getIcon = (title: string) => {
+    switch (title) {
+      case "Phone":
+        return AiOutlinePhone;
+      case "Mail":
+        return AiOutlineMail;
+      case "Github":
+        return AiOutlineGithub;
+      case "Facebook":
+        return AiFillFacebook;
+      case "Instagram":
+        return AiOutlineInstagram;
+      case "Linkedin":
+        return AiFillLinkedin;
+      default:
+        return "";
+    }
+  };
+
   return (
     <Box
       w="100%"
       h="100vh"
-      bg="#17141B"
       justifyContent="center"
       paddingTop="170px"
+      ref={ref}
+      animation={`${fadeIn} 1s ease-in-out`}
     >
       <Flex width="100%" justifyContent="space-evenly">
         <VStack justify="flex-start" spacing="50px">
@@ -45,31 +87,14 @@ const Contact = () => {
             CONTACT
           </Heading>
           <List spacing="10px" color="#ffffff" sx={listStyle}>
-            <ListItem>
-              <ListIcon as={AiOutlinePhone} />
-              {contactData.phone}
-            </ListItem>
-            <ListItem>
-              <ListIcon as={AiOutlineMail} />
-              {contactData.mail}
-            </ListItem>
-            <ListItem>
-              <ListIcon as={AiOutlineGithub} />
-              {contactData.github}
-            </ListItem>
-            <ListItem>
-              <ListIcon as={AiFillFacebook} />
-              {contactData.facebook}
-            </ListItem>
-            <ListItem>
-              <ListIcon as={AiOutlineInstagram} />
-              {contactData.instagram}
-            </ListItem>
-
-            <ListItem>
-              <ListIcon as={AiFillLinkedin} />
-              {contactData.linkedin}
-            </ListItem>
+            {data.map((item) => {
+              return (
+                <ListItem>
+                  <ListIcon as={getIcon(item.title)} />
+                  {item.description}
+                </ListItem>
+              );
+            })}
           </List>
         </VStack>
 

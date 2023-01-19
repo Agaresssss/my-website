@@ -15,70 +15,77 @@ import {
   Button,
   HStack,
   background,
+  keyframes,
 } from "@chakra-ui/react";
 import { format, compareAsc } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import FrameCard from "../components/FrameCard";
 import Timeline from "../components/Timeline";
 import Experience from "../components/Experience";
+import { useInView } from "framer-motion";
+import {useRef,useEffect} from 'react'
 
 const data = {
-  imagePath: "src/assets/DSCF1733_20.jpg",
-  dob: new Date(2001, 2, 14),
-  interests: [
-    {
-      icon: "src/assets/flaticon/001-desktop.svg",
-      title: "Computer",
-      detail:
-        "I'm interested in Computer, especially in hardware. I like to build my own computer.",
-    },
-    {
-      icon: "src/assets/flaticon/003-robot 1.svg",
-      title: "Technology",
-      detail: "I'm like to learn about new technology",
-    },
-    {
-      icon: "src/assets/flaticon/005-shuttlecock.svg",
-      title: "Sport",
-      detail: "I like to play sport, especially badminton with my friends",
-    },
-    {
-      icon: "src/assets/flaticon/004-adjustment 1.svg",
-      title: "Music",
-      detail:
-        "In a freetime. I will listen to music to relax and sometime I learn how to produce music from  youtube.",
-    },
-    {
-      icon: "src/assets/flaticon/002-camera 1.svg",
-      title: "Photography",
-      detail:
-        "I love take a picture of nature and people. I like to take a picture of sunset and sunrise.",
-    },
-  ],
-  experiences: [
-    {
-      img: "src/assets/portfolio-pic/modern-doc/logo.png",
-      title: "Modern doc",
-    },
-    {
-      img: "src/assets/portfolio-pic/scispec/logo1 3.png",
-      title: "ERP Scispec",
-    },
-    {
-      img: "src/assets/portfolio-pic/angel-bank/log2.png",
-      title: "Angel bank",
-    },
-  ]
+  
 };
+type ZoneProps = {
+  children: JSX.Element;
+  sx?: any;
+  animation?: any;
+}
 
-const About = () => {
-  const navigate = useNavigate();
-  const currentDay = new Date(Date.now());
-  console.log();
+const Zone = ({children, sx,animation } :ZoneProps) => {
+  const ref = useRef(null)
+  const inView = useInView(ref)
 
   return (
-    <Box w="100%" h="100%" bg="#17141B" paddingTop="170px" paddingBottom='100px'>
+    <Box ref={ref} opacity = {inView ? '1' : '0'} {...sx} animation = {animation} transform = {
+      inView ? 'translateY(100px)' : 'translateY(0px)'
+    }>
+      {children}
+    </Box>
+  )
+}
+
+const dissolve = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+    }`
+
+type propsType = {
+    data : {
+        imagePath: string;
+        dob: Date;
+        interests: {
+            icon: string;
+            title: string;
+            detail: string;
+        }[];
+        experiences: {
+            img: string;
+            title: string;
+        }[];
+    }
+}
+
+const About = ({data} : propsType) => {
+ 
+
+  const navigate = useNavigate();
+  const currentDay = new Date(Date.now());
+  
+
+
+
+  return (
+    <Box w="100%" h="100%"  paddingTop="170px" paddingBottom='100px' animation={`${dissolve} 1s ease-in`} >
       <Heading sx={headSytle}>ABOUT</Heading>
+      
+
+     <Zone animation={`${dissolve} 1s ease-in`}>
       <Grid
         margin="100px"
         templateRows="repeat(2 1fr)"
@@ -91,7 +98,7 @@ const About = () => {
           </Center>
         </GridItem>
         <GridItem colSpan={3}>
-          <Container color="#FFFFFF" fontSize="18px" fontWeight="light">
+          <Container color="#FFFFFF" fontSize="18px" fontWeight="light" >
             <Heading
               color="#FFFFFF"
               fontSize="30px"
@@ -100,11 +107,18 @@ const About = () => {
             >
               PROFILE
             </Heading>
-            Hello, everyone. My name is Phuettipol Jitjaroenkit, you can call me
+            <Text textAlign='justify'>
+            Hello, everyone. My name is  <Text as="span" fontSize='22px' fontWeight='bold' color="#FFC107">{data.name}</Text> 
+            , you can call me
             Ball. I am a student at King Mongkut's University of Technology
             Thonburi, majoring in Computer Engineering. I am interested in
             full-stack development. I have experience in developing web
             applications using ReactJS, ExpressJS.
+            </Text>
+            
+           
+            
+           
             <UnorderedList marginTop="20px">
               <ListItem>
                 <Text sx={textLayout}>
@@ -129,14 +143,14 @@ const About = () => {
               marginTop="40px"
               sx={buttonStyle}
               onClick={() => {
-                // navigate("/contact");
+                 navigate("/contact");
               }}
             >
               More contacts
             </Button>
           </Container>
         </GridItem>
-        <GridItem colSpan={3} rowSpan={3}>
+        <GridItem colSpan={3} rowSpan={3} >
           <Container
             color="#FFFFFF"
             fontSize="18px"
@@ -156,16 +170,22 @@ const About = () => {
           </Container>
         </GridItem>
       </Grid>
+      </Zone>
+      
       <Heading marginTop="80px" sx={headSytle}>
         EDUCATION
       </Heading>
       <Box  marginTop='120px' fontSize="18px" fontWeight="light" color='#FFFFFF '  w='100%' >
-        <Timeline/>
+        <Timeline data={data.education}/>
       </Box>
+     
+     
+        
       <Heading marginTop="200px" sx={headSytle}>
         EXPERIENCE
       </Heading>
              <Experience data={data.experiences} />
+     
     </Box>
   );
 };
