@@ -4,6 +4,12 @@ import PageContainer from "./components/PageContrainer";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
+import Errorpage from "./pages/Errorpage";
+
+
+const personalData = {
+    
+}
 
 function App() {
   return (
@@ -14,9 +20,9 @@ function App() {
           <Route path="about" element={<About/>} />
           <Route path="portfolio" element={<Portfolio/>} />
           <Route path="contact" element={<Contact/>} />
-          <Route path="*" element={<h1>Error 404 not found</h1>} />
+          <Route path="*" element={<Errorpage/>} />
         </Route>
-        <Route path="*" element={<h1>Error 404 not found</h1>} />
+        
       </Routes>
     </>
   );
