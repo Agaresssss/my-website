@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@chakra-ui/react': ^2.4.7
+  '@emailjs/browser': ^3.10.0
   '@emotion/react': ^11.10.5
   '@emotion/styled': ^11.10.5
   '@popperjs/core': ^2.11.6
@@ -26,6 +27,7 @@ specifiers:
 
 dependencies:
   '@chakra-ui/react': 2.4.7_6pcm6hydstyxl3fvqahfasssfa
+  '@emailjs/browser': 3.10.0
   '@emotion/react': 11.10.5_kzbn2opkn2327fwg5yzwzya5o4
   '@emotion/styled': 11.10.5_qvatmowesywn4ye42qoh247szu
   '@popperjs/core': 2.11.6
@@ -1171,6 +1173,11 @@ packages:
     dependencies:
       '@chakra-ui/system': 2.3.8_dovxhg2tvkkxkdnqyoum6wzcxm
       react: 18.2.0
+    dev: false
+
+  /@emailjs/browser/3.10.0:
+    resolution: {integrity: sha512-pregUOBkSjjctQoAgn8DcSaeY4ypHjXAJEzWlJysM3RkQXw1ulavfHva3YYeAkxfJ7qbIhpyvRmhyQlgNG4GVg==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /@emotion/babel-plugin/11.10.5:

@@ -28,7 +28,7 @@ type emailParams = {
   message : string
 } 
  const sendEmail = (value : emailParams) => {
-    Emailjs.send("service_u5mu7a3","template_20hmolf", {
+  emailjs.send("service_u5mu7a3","template_20hmolf", {
       from_name: value.name,
       from_email: value.email,
       subject: value.subject,
@@ -79,8 +79,10 @@ type emailParams = {
                       duration: 5000,
             })
           }).then(()=> {
-            window.location.reload()
+            
             setLoading(false)
+          }).then(()=>{
+            window.location.reload()
           }).catch((error) => {
             console.log(error.text);
             toast({

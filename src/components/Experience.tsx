@@ -73,7 +73,7 @@ const nextIndex = wrap(0, data.length, page + 1);
     <>
    
    
-    <Box sx={boxlayout} position="relative" as = {motion.div}>
+    <Box sx={boxlayout} position="relative" as = {motion.div} drag = 'x'>
      
       <Flex justifyContent="center" h="520px" justifyItems="flex-start">
       <Experienceitem img={data[preIndex].img} title={data[preIndex].title} />
