@@ -22,7 +22,7 @@ import {
 } from "react-icons/ai";
 import FormEmail from "../components/FormEmail";
 const contactData = {
-  phone: "+66 87 653 2059",
+  phone: "0876532059",
   mail: "phuettipol.jjrk@mail.kmutt.ac.th",
   github: "https://github.com/Agaresssss",
   facebook: "Ball Around",

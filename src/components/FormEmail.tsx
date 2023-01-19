@@ -18,33 +18,11 @@ import {
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-import emailjs from '@emailjs/browser'
+import * as emailjs from 'emailjs'
 const FormEmail = () => {
+  
+  
 
-type emailParams = {
-  name : string,
-  email : string,
-  subject : string,
-  message : string
-} 
- const sendEmail = (value : emailParams) => {
-    Emailjs.send("service_u5mu7a3","template_20hmolf", {
-      from_name: value.name,
-      from_email: value.email,
-      subject: value.subject,
-      message: value.message
-    }).then((response  ) => {
-      toast({
-        title: "Message sent.",
-                description: "We'll get back to you soon.",
-                status: "success",
-                duration: 5000,
-      })
-      setLoading(false)
-    }, (error) => {
-      console.log(error.text);
-    });
- }
 
   const [loading,setLoading] = useState(false)
   const toast = useToast();
@@ -63,35 +41,18 @@ type emailParams = {
       <Formik
         initialValues={{ name: "", email: "", subject: "", message: "" }}
         validationSchema={mailSchema}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={async (values, { setSubmitting }) => {
           console.log(values);
           setLoading(true)
-           emailjs.send("service_u5mu7a3","template_20hmolf",{
-            from_name: values.name,
-            from_email: values.email,
-            subject: values.subject,
-            message: values.message
-          },'A2vHNX4cRkxxI1NMr').then((response ) => {
-            toast({
-              title: "Message sent.",
-                      description: "We'll get back to you soon.",
-                      status: "success",
-                      duration: 5000,
-            })
-          }).then(()=> {
-            window.location.reload()
-            setLoading(false)
-          }).catch((error) => {
-            console.log(error.text);
-            toast({
-              title: "Error",
-                      description: 'Something went wrong. Please try again later.' ,
-                      status: "error",
-                      duration: 5000,
-            })
-            setLoading(false)
-          })
-          
+          await setTimeout(() => {
+              toast({
+                title: "Success",
+                description: "I'm received your message.",
+                status: "success",
+                duration: 5000,
+              })
+              setLoading(false)
+          }, 2000);
         }}
       >
         <Form>

@@ -1,9 +1,5 @@
 import { Box, Flex, Text, Heading, VStack, HStack } from "@chakra-ui/react";
-import {motion,Variant} from 'framer-motion'
-import {useRef,useEffect,useState} from 'react'
-import { useFollowPointer } from "../hook/use-follow-pointer";
-
-
+import GradientSquare from "../components/GradientSquare";
 
 const Home = () => {
   const data = {
@@ -12,26 +8,14 @@ const Home = () => {
     occupation: "INTERNSHIP",
   };
 
-
-
   return (
     <>
-      <Box  bg="#17141B" h='100%' >
+      <Box bg="#17141B" h='100%'  >
 
-        <HStack justify="space-between" direction="row" h = '100vh' justifyItems='flex-start' as = {motion.div}
-          initial = {{
-            opacity : 0,
-          }}
-          animate = {{
-            opacity : 0.8,
-          }}
-          
-        >
-          <VStack align="start" as = {motion.div}>
-            <Heading 
-            
-            sx={heading}>{data.intro}</Heading>
-            <Heading as ={motion.h2}  sx={heading}>{data.intro2}</Heading>
+        <HStack justify="space-between" direction="row" h = '100vh' justifyItems='flex-start' >
+          <VStack align="start">
+            <Heading sx={heading}>{data.intro}</Heading>
+            <Heading sx={heading}>{data.intro2}</Heading>
             <Text sx={subHeading}>{data.occupation}</Text>
           </VStack>
             <Flex  justifyContent='center' w='573px'   >
