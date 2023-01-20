@@ -32,7 +32,6 @@ const Portfolio = ({data} : propsType) => {
     <Box
       w="100%"
       h="100%"
-      bg="#17141B"
       justifyContent="center"
       paddingTop="200px"
       animation={`${fade} 1s ease-in`}
