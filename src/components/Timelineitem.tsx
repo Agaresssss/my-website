@@ -1,12 +1,4 @@
-import {
-  Box,
-  Text,
-  Flex,
-  HStack,
-  Heading,
-  VStack,
-  position,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 
 interface dataTypes {
   year: string;
@@ -18,26 +10,19 @@ type propsType = {
   animation?: any;
 };
 
-const Timelineitem = ({ item , animation }: propsType) => {
+const Timelineitem = ({ item, animation }: propsType) => {
   return (
-    <Box sx={timelineItem} animation = {animation}>
-      <VStack gap="20px" sx={StackTimeline} overflow="hidden">
-        <Heading
-        sx = {timelineItemYear}
-         
-        >
-          {item?.year}
-        </Heading>
+    <Box sx={timelineItem} animation={animation}>
+      <VStack gap="20px"  overflow="hidden">
+        <Heading sx={timelineItemYear}>{item?.year}</Heading>
         <Box sx={rotateSquare} />
-        <Text  sx={timelineItemName}>{item?.name}</Text>
+        <Text sx={timelineItemName}>{item?.name}</Text>
       </VStack>
     </Box>
   );
 };
 
 export default Timelineitem;
-
-let StackTimeline = {};
 
 let timelineItem = {
   margin: "auto",
@@ -50,19 +35,19 @@ let rotateSquare = {
   height: "50px",
   transform: "rotate(45deg)",
   border: "solid 1px",
-  "border-image":
+  borderImage:
     "linear-gradient(to bottom, rgba(221,71,89,0.8),rgba(221,71,89,0)) 1",
   background: "#17141B",
 };
 let timelineItemYear = {
-    fontSize:"48px",
-    color:"#FFFFFF",
-    fontFamily:"Bebas Neue",
-    letterSpacing:"0.2em",
-    fontWeight:"400",
+  fontSize: "48px",
+  color: "#FFFFFF",
+  fontFamily: "Bebas Neue",
+  letterSpacing: "0.2em",
+  fontWeight: "400",
 };
 let timelineItemName = {
-  textAlign : "center",
+  textAlign: "center",
   fontSize: "30px",
   color: "#FFFFFF",
   fontWeight: "bold",

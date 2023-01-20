@@ -42,6 +42,7 @@ const Portfolio = ({data} : propsType) => {
         {data.map((item,index) => {
           return (
             <Portfolioitem
+            key={index}
               img={item.img}
               title={item.title}
               description={item.description}

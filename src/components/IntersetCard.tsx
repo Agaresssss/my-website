@@ -1,20 +1,13 @@
 import {
-  Box,
   Card,
-  Heading,
-  Container,
-  Text,
-  Image,
-  Stack,
-  Icon,
-  CardHeader,
   CardBody,
-  CardFooter,
-  Divider,
-  keyframes
+  Container,
+  Heading,
+  Image,
+  keyframes,
 } from "@chakra-ui/react";
-import {motion , AnimatePresence,useInView} from 'framer-motion'
-import { useRef, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 type propsType = {
   icon?: string;
   title?: string;
@@ -29,17 +22,25 @@ const dissolve = keyframes`
   to {
     opacity: 1;
     transform: translateY(0px);
-    }`
-
-
+    }`;
 
 const InterestCard = ({ icon, title, detail }: propsType) => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
 
-const ref = useRef(null)
-const inView = useInView(ref)
+  const animate: any = (inView: boolean, animation: String) => {
+    if (inView) {
+      return animation;
+    }
+  };
 
   return (
-    <Card sx={cardLayout} as = {motion.div} ref = {ref} animation = {inView && `${dissolve} 2s ease`} >
+    <Card
+      sx={cardLayout}
+      as={motion.div}
+      ref={ref}
+      animation={animate(inView, `${dissolve} 2s ease`)}
+    >
       <CardBody>
         <Container color="#FFFFFF" sx={detailLayout} centerContent>
           <Image
@@ -63,13 +64,12 @@ let cardLayout = {
   width: "240px",
   height: "250px",
   border: "1px solid",
-  "border-image":
+  borderImage:
     "linear-gradient(45deg,rgba(221, 71, 89, 0.64) 0%,rgba(54, 88, 184, 0.64) 100% ) 1",
   borderOpacity: "0.8",
   borderRadius: "0px",
   cursor: "grab",
-  'pointer-events': 'none',
-  
+  pointerevents: "none",
 };
 
 let titleLayout = {

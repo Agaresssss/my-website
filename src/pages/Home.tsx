@@ -1,8 +1,12 @@
-import { Box, Flex, Text, Heading, VStack, HStack ,keyframes} from "@chakra-ui/react";
-import {motion,Variant} from 'framer-motion'
-import {useRef,useEffect,useState} from 'react'
-import { useFollowPointer } from "../hook/use-follow-pointer";
-
+import {
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  keyframes,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 
 const Spacer = keyframes`
   0% { 
@@ -14,7 +18,7 @@ const Spacer = keyframes`
 100% {  
   letter-spacing: 0.5em;
  }
-    `
+    `;
 const scale = keyframes`
   0% {
     transform: scale(1);
@@ -25,51 +29,48 @@ const scale = keyframes`
       }
     100% {
       transform: scale(1);
-      `
+      `;
 const fadeIn = keyframes`
   0% {
     opacity: 0;
     }
     100% {
       opacity: 1;
-      }`
-
+      }`;
 
 type propsType = {
-  data : {
-    intro : string,
-    intro2 : string,
-    occupation : string
-  }
-}
+  data: {
+    intro: string;
+    intro2: string;
+    occupation: string;
+  };
+};
 
-const Home = ({data} : propsType) => {
-
-  const letterSpace = `${Spacer} 15s ease-in-out infinite`
-  const squareScale = `${scale} 2s ease-in infinite`
-
-
-
+const Home = ({ data }: propsType) => {
+  const letterSpace = `${Spacer} 15s ease-in-out infinite`;
+  const squareScale = `${scale} 2s ease-in infinite`;
 
   return (
     <>
-      <Box   h='100%' animation={`${fadeIn} 1s ease-in-out`}>
-
-        <HStack justify="space-between" direction="row" h = '100vh' justifyItems='flex-start' 
-         
-          
+      <Box h="100%" animation={`${fadeIn} 1s ease-in-out`}>
+        <HStack
+          justify="space-between"
+          direction="row"
+          h="100vh"
+          justifyItems="flex-start"
         >
-          <VStack align="start" >
-            <Heading 
-            animation={letterSpace}
-            sx={heading}>{data.intro}</Heading>
-            <Heading animation={letterSpace}  sx={heading}>{data.intro2}</Heading>
+          <VStack align="start">
+            <Heading animation={letterSpace} sx={heading}>
+              {data.intro}
+            </Heading>
+            <Heading animation={letterSpace} sx={heading}>
+              {data.intro2}
+            </Heading>
             <Text sx={subHeading}>{data.occupation}</Text>
           </VStack>
-            <Flex  justifyContent='center' w='573px' animation={squareScale}    >
-            <Box  sx={gradientShape} />
-            </Flex>
-          
+          <Flex justifyContent="center" w="573px" animation={squareScale}>
+            <Box sx={gradientShape} />
+          </Flex>
         </HStack>
       </Box>
     </>
@@ -79,16 +80,11 @@ const Home = ({data} : propsType) => {
 let gradientShape = {
   width: "405px",
   height: "405px",
-  "border-style": "solid",
-  "border-width": "10px",
-  "border-image":
+  borderStyle: "solid",
+  borderWidth: "10px",
+  borderImage:
     "linear-gradient(to bottom, rgba(221,71,89,0.8),rgba(221,71,89,0)) 1",
-
-  // position: "absolute",
-  
-  //top: "295px",
-
-  "mix-blend-mode": "normal",
+  mixBlendMode: "normal",
   transform: "rotate(45deg)",
 };
 

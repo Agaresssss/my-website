@@ -1,21 +1,4 @@
-import {
-  Box,
-  Card,
-  Heading,
-  Container,
-  Text,
-  Image,
-  Stack,
-  Icon,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Divider,
-  Center,
-  Button,
-  Flex,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Container, Image, Text, VStack } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 type propsType = {
@@ -25,11 +8,17 @@ type propsType = {
   animation?: string;
 };
 
-const Experienceitem = ({ img, title,description, animation }: propsType) => {
+const Experienceitem = ({ img, title, description, animation }: propsType) => {
   const navigate = useNavigate();
   return (
-    <Box sx={cardLayout} justifyContent="center" role="group" overflow='hidden' animation={animation}>
-      <Box h="470px" display="flex" justifyContent="center" alignItems="center" >
+    <Box
+      sx={cardLayout}
+      justifyContent="center"
+      role="group"
+      overflow="hidden"
+      animation={animation}
+    >
+      <Box h="470px" display="flex" justifyContent="center" alignItems="center">
         <Image
           src={img}
           width="300px"
@@ -37,20 +26,17 @@ const Experienceitem = ({ img, title,description, animation }: propsType) => {
           objectFit="contain"
           __css={{
             transition: "0.5s ease-out",
-
           }}
           _groupHover={{
             transition: "0.7s ease",
             opacity: "0.3",
             filter: "blur(10px)",
           }}
-         
         />
       </Box>
 
       <VStack
-      
-      role='group'
+        role="group"
         justifyContent="center"
         __css={{
           transition: "0.5s ease-out",
@@ -60,7 +46,6 @@ const Experienceitem = ({ img, title,description, animation }: propsType) => {
           transitionDelay: "0.3s",
           transition: "0.5s ease",
           transform: "translateY(-400px)",
-          
         }}
       >
         <Text
@@ -72,23 +57,25 @@ const Experienceitem = ({ img, title,description, animation }: propsType) => {
         >
           {title}
         </Text>
-        <Container  centerContent sx = {paragraphStyle} _groupHover = {{
-          transition: "0.7s ease",
-          opacity: "0.8",
-        }}>
+        <Container
+          centerContent
+          sx={paragraphStyle}
+          _groupHover={{
+            transition: "0.7s ease",
+            opacity: "0.8",
+          }}
+        >
           {description}
         </Container>
         <Button
-          
           _groupHover={{
             marginTop: "20px",
             transition: "0.7s ease",
             opacity: "1",
-            
           }}
           sx={buttonStyle}
           onClick={() => {
-             navigate("/portfolio");
+            navigate("/portfolio");
           }}
         >
           See more
@@ -98,35 +85,32 @@ const Experienceitem = ({ img, title,description, animation }: propsType) => {
   );
 };
 
-
-
 let paragraphStyle = {
-  transition : "0.5s",
+  transition: "0.5s",
   fontFamily: "Gravity",
   fontWeight: "400",
   fontSize: "14px",
   color: "#FFFFFF",
-  opacity : "0",
-}
+  opacity: "0",
+};
 
 let buttonStyle = {
-  
   opacity: "0",
-  
+
   color: "#FFFFFF",
   background:
     "linear-gradient(to right, #4b6cb7 0%, #4d00ab  51%, #4b6cb7  100%)",
-  "text-transform": "uppercase",
+  textTransform: "uppercase",
   transition: "0.5s",
-  "background-size": "200% auto",
+  backgroundSize: "200% auto",
   letterSpacing: "0.2em",
   fontFamily: "Gravity",
   fontWeight: "bold",
   fontSize: "14px",
   _hover: {
-    "background-position": "right center",
+    backgroundPosition: "right center",
     color: "#ffffff",
-    "text-decoration": "none",
+    textDecoration: "none",
   },
   _active: {
     background: "#17141B",
@@ -135,15 +119,14 @@ let buttonStyle = {
 };
 
 let cardLayout = {
-  
   width: "420px",
   height: "500px",
   background: "#17141B",
   border: "1px solid",
-  "border-image":
+  borderImage:
     "linear-gradient(45deg,rgba(221, 71, 89, 0.64) 0%,rgba(54, 88, 184, 0.64) 100% ) 1",
   borderOpacity: "0.8",
-  transition : "0.5s",
+  transition: "0.5s",
   _hover: {
     transitionDelay: "0.2s",
     transition: "0.5s ease",
@@ -156,14 +139,12 @@ let cardLayout = {
 let textStyle = {
   marginTop: "20px",
   transition: "0.7s ease",
-  opacity : "0",
+  opacity: "0",
   fontFamily: "bebas neue",
   fontSize: "36px",
   letterSpacing: "0.2em",
   fontWeight: "400",
   color: "#FFFFFF",
-  
 };
-let imageLayout = {};
 
 export default Experienceitem;

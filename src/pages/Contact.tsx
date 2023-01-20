@@ -1,27 +1,22 @@
 import {
   Box,
-  VStack,
-  HStack,
-  Text,
   Flex,
-  Icon,
-  List,
-  ListItem,
-  ListIcon,
-  OrderedList,
-  UnorderedList,
   Heading,
   keyframes,
+  List,
+  ListIcon,
+  ListItem,
+  VStack,
 } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import {
-  AiOutlinePhone,
-  AiOutlineMail,
-  AiOutlineGithub,
   AiFillFacebook,
-  AiOutlineInstagram,
   AiFillLinkedin,
+  AiOutlineGithub,
+  AiOutlineInstagram,
+  AiOutlineMail,
+  AiOutlinePhone,
 } from "react-icons/ai";
 import FormEmail from "../components/FormEmail";
 const contactData = {
@@ -53,7 +48,7 @@ const Contact = ({ data }: propsType) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
-  const getIcon = (title: string) => {
+  const getIcon: any = (title: string) => {
     switch (title) {
       case "Phone":
         return AiOutlinePhone;
@@ -87,9 +82,9 @@ const Contact = ({ data }: propsType) => {
             CONTACT
           </Heading>
           <List spacing="10px" color="#ffffff" sx={listStyle}>
-            {data.map((item) => {
+            {data.map((item, index) => {
               return (
-                <ListItem>
+                <ListItem key={index}>
                   <ListIcon as={getIcon(item.title)} />
                   {item.description}
                 </ListItem>
