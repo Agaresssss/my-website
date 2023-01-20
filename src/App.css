@@ -1,35 +1,36 @@
 @font-face {
     font-family: "Gravity";
-    src: url("./fonts/Gravity-Regular.otf");
+    src: url("./fonts/Gravity-Regular.otf") format("opentype");
     font-weight: "normal";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./fonts/Gravity-Bold.otf");
+    src: url("../fonts/Gravity-Bold.otf") format("opentype");
     font-weight: "bold";
     font-style: "bold";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./fonts/Gravity-Italic.otf");
+    src: url("../fonts/Gravity-Italic.otf") format("opentype");
     font-weight: "intalic";
     font-style: "intalic";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./fonts/Gravity-Light.otf");
+    src: url("../fonts/Gravity-Light.otf") format("opentype");
     font-weight: "light";
     font-style: "light";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./fonts/Gravity-Book.otf");
+    src: url("../fonts/Gravity-Book.otf") format("opentype");
     font-weight: "book";
     font-style: "book";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./fonts/Gravity-UltraLight.otf");
+    src: url("../fonts/Gravity-UltraLight.otf") format("opentype");
     font-weight: "ultralight";
     font-style: "ultralight";
 }
+
