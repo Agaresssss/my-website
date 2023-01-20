@@ -7,28 +7,24 @@ import {
   Heading,
   Image,
   Text,
+  keyframes
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion,useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+
 
 type propsType = {
   img?: string;
   title?: string;
-  detail?: string;
+  description?: string;
+  role ?: string;
   path?: string;
   pics?: number;
+  sec? : number
 };
 
-const data: any = {
-  img: "https://via.placeholder.com/256",
-  title: "Modern doc",
-  detail:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ",
-  path: "modern-doc",
-  pics: 9,
-};
 
-const getPicture = (path: String, picture: number) => {
+const getPicture = (path: String | undefined, picture: number ) => {
   const result: number[] = [];
   for (let i = 1; i <= picture; i++) {
     result.push(i);
@@ -47,9 +43,21 @@ const getPicture = (path: String, picture: number) => {
   });
 };
 
-const Portfolioitem = ({ img, title, detail,path,pics }: propsType) => {
+const fade = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+      }`
+
+const Portfolioitem = ({ img, title, description,role,path,pics,sec }: propsType) => {
   const [width, setWidth] = useState(0);
   const carouselRef = useRef<any>();
+  const ref = useRef(null);
+  const inView = useInView(ref,{once : true});
 
   useEffect(() => {
     setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
@@ -57,15 +65,16 @@ const Portfolioitem = ({ img, title, detail,path,pics }: propsType) => {
 
   return (
     <>
-      <Box justifyContent="center" display="flex">
+      <Box justifyContent="center" display="flex" ref = {ref} animation = {inView && `${fade} ${sec}.5s ease-in`}>
         <Grid
           w="80%"
+          h= '110%'
           templateRows="repeat(3, 1fr)"
           templateColumns="repeat(3, 1fr)"
           gap={4}
         >
           <GridItem rowSpan={1} colSpan={3}>
-            <Heading marginLeft="100px" sx={textStyle}>
+            <Heading   sx={textStyle}>
               {title}
             </Heading>
           </GridItem>
@@ -87,7 +96,8 @@ const Portfolioitem = ({ img, title, detail,path,pics }: propsType) => {
             h="100%"
             justifyContent="flex-start"
           >
-            <Text sx={paragraphStyle}>{detail}</Text>
+            <Text sx={paragraphStyle}>{description}</Text>
+            <Text sx={paragraphStyle} marginTop = '20px'>{role}</Text>
             <Flex
               ref={carouselRef}
               as={motion.div}
@@ -111,6 +121,7 @@ const Portfolioitem = ({ img, title, detail,path,pics }: propsType) => {
 };
 
 let textStyle = {
+  alignText: "flex-start",
   marginTop: "20px",
   transition: "0.7s ease",
   opacity: "0.8",
@@ -139,12 +150,13 @@ let imgStyle = {
 
 let carousel = {
   width: "100%",
-  height: "100%",
+  height: "calc(100% -10px)",
   cursor: "grab",
   overflowX: "hidden",
 };
 
 let innerCarousel = {
+  
   display: "flex",
   direction: "row",
   gap: "20px",

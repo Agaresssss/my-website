@@ -29,6 +29,7 @@ const FrameCard = ({ data }: propsType) => {
               icon={item.icon}
               title={item.title}
               detail={item.detail}
+              key={index}
             />
           );
         })}
@@ -43,7 +44,8 @@ let carousel = {
   width : '100%',
   height : '100%',
   cursor : 'grab',
-  overflowX : 'hidden'
+  overflowX : 'hidden',
+  overflowY : 'hidden'
 };
 
 let innerCarousel = {

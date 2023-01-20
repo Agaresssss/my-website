@@ -18,6 +18,7 @@ import { BiRightArrow, BiLeftArrow } from "react-icons/bi";
 interface experienceType {
     img: string;
     title: string;
+    description: string;
 }
 
 type propsType = {
@@ -80,9 +81,9 @@ const spacer = keyframes`
           aria-label="prev"
           icon={<BiLeftArrow />}
         />
-      <Experienceitem img={data[preIndex].img} title={data[preIndex].title} animation = {inView && `${spacer} 2s ease` } />
-        <Experienceitem img={data[index].img} title={data[index].title}  animation = {inView && `${spacer} 3s ease` } />
-        <Experienceitem img={data[nextIndex].img} title={data[nextIndex].title} animation = {inView && `${spacer} 4s ease` } />
+      <Experienceitem img={data[preIndex].img} title={data[preIndex].title} description = {data[preIndex].description}  animation = {inView && `${spacer} 2s ease` } />
+        <Experienceitem img={data[index].img} title={data[index].title} description = {data[index].description}  animation = {inView && `${spacer} 3s ease` } />
+        <Experienceitem img={data[nextIndex].img} title={data[nextIndex].title} description = {data[nextIndex].description} animation = {inView && `${spacer} 4s ease` } />
         
         <IconButton
         size= "lg"

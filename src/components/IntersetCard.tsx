@@ -11,18 +11,35 @@ import {
   CardBody,
   CardFooter,
   Divider,
+  keyframes
 } from "@chakra-ui/react";
-import {motion , AnimatePresence} from 'framer-motion'
-
+import {motion , AnimatePresence,useInView} from 'framer-motion'
+import { useRef, useEffect } from "react";
 type propsType = {
   icon?: string;
   title?: string;
   detail?: string;
 };
 
+const dissolve = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+    }`
+
+
+
 const InterestCard = ({ icon, title, detail }: propsType) => {
+
+const ref = useRef(null)
+const inView = useInView(ref)
+
   return (
-    <Card sx={cardLayout} as = {motion.div}>
+    <Card sx={cardLayout} as = {motion.div} ref = {ref} animation = {inView && `${dissolve} 2s ease`} >
       <CardBody>
         <Container color="#FFFFFF" sx={detailLayout} centerContent>
           <Image
