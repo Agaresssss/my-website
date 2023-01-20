@@ -6,7 +6,7 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Errorpage from "./pages/Errorpage";
 import  {PersonalData}  from "./data/PersonalData";
-import './App.css'
+import "../src/App.css"
 
 
 
