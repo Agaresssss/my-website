@@ -123,7 +123,7 @@ const FormEmail = () => {
                     <InputRightElement
                       color="#FFFFFF"
                       children={
-                        <Text fontFamily="Gravity" fontWeight="light">
+                        <Text fontFamily="Gravity Light" fontWeight="normal">
                           {field.value.length}/40
                         </Text>
                       }
@@ -166,7 +166,7 @@ const FormEmail = () => {
                     <InputRightElement
                       color="#FFFFFF"
                       children={
-                        <Text fontFamily="Gravity" fontWeight="light">
+                        <Text fontFamily="Gravity Light" fontWeight="normal">
                           {field.value.length}/40
                         </Text>
                       }
@@ -217,8 +217,8 @@ let buttonStyle = {
   transition: "0.5s",
   backgroundSize: "200% auto",
   letterSpacing: "0.2em",
-  fontFamily: "Gravity",
-  fontWeight: "bold",
+  fontFamily: "Gravity Bold",
+  fontWeight: "normal",
   fontSize: "16px",
   _hover: {
     backgroundPosition: "right center",
@@ -246,21 +246,17 @@ let inputLayout = {
   color: "#FFFFFF",
   opacity: 0.8,
   letterSpacing: "0.1em",
-  fontFamily: "Gravity",
-  fontWeight: "light",
+  fontFamily: "Gravity Light",
+  fontWeight: "normal",
   fontSize: "16px",
   _placeholder: {
     color: "#FFFFFF",
     opacity: 0.8,
     letterSpacing: "0.1em",
-    fontFamily: "Gravity",
-    fontWeight: "light",
+    fontFamily: "Gravity Light",
+    fontWeight: "normal",
     fontSize: "16px",
   },
-};
-
-let formLabel = {
-  color: "#FFFFFF",
 };
 
 // <FormControl onSubmit={(value)=>{

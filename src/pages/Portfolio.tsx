@@ -71,8 +71,8 @@ let textStyle = {
 let headSytle = {
   color: "#FFFFFF",
   fontSize: "56px",
-  fontWeight: "bold",
-  fontFamily: "Gravity",
+  fontWeight: "normal",
+  fontFamily: "Gravity Bold",
   textAlign: "center",
   letterSpacing: "0.33em",
 };

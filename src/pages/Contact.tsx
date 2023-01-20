@@ -102,8 +102,8 @@ const Contact = ({ data }: propsType) => {
 export default Contact;
 
 let listStyle = {
-  fontFamily: "Gravity",
-  fontWeight: "light",
+  fontFamily: "Gravity Light",
+  fontWeight: "normal",
   fontSize: "16px",
   letterSpacing: "0.2em",
 };
