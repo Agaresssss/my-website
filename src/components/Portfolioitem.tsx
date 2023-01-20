@@ -69,13 +69,18 @@ const Portfolioitem = ({
     setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
   }, []);
 
+  const animate: any = (inView: boolean, animation: String) => {
+    if (inView) {
+      return animation;
+    }
+  };
   return (
     <>
       <Box
         justifyContent="center"
         display="flex"
         ref={ref}
-        animation={inView && `${fade} ${sec}.5s ease-in`}
+        animation={animate(inView, `${fade} ${sec}.5s ease-in`)}
       >
         <Grid
           w="80%"
