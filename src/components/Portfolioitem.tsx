@@ -110,7 +110,7 @@ const Portfolioitem = ({ img, title, description,role,path,pics,sec }: propsType
                 drag="x"
                 dragConstraints={{ right: 0, left: -width }}
               >
-                {getPicture(path, pics)}
+                {(pics != 0) && getPicture(path, pics)}
               </Flex>
             </Flex>
           </GridItem>

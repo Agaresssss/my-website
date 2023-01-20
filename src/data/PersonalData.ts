@@ -62,15 +62,15 @@ export const PersonalData = {
             description: "Sci Spec is an application for internal data management.",
             role :"My position in this project is to design the new database.",
             path: "scispec",
-            pics: 1
+            pics: 0
         },
         {
             img: "src/assets/portfolio-pic/angel-bank/log2.png",
             title: "Angel bank",
             description: "Angel Bank is an online banking application. The user can exchange currencies and make transactions.",
-            role :"My position in this project is to query the information from the database and send it to the front end framework using express.",
+            role :"My position in this project is to query the information from the database and send it to the front end framework using expressJS.",
             path: "angel-bank",
-            pics: 1
+            pics: 0
         },
     ],
     contact: [
