@@ -12,12 +12,6 @@
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts/Gravity-Italic.woff") format("woff");
-    font-weight: "intalic";
-    font-style: "intalic";
-}
-@font-face {
-    font-family: "Gravity";
     src: url("./assets/fonts/Gravity-Light.woff") format("woff");
     font-weight: "light";
     font-style: "light";
@@ -28,14 +22,15 @@
     font-weight: "book";
     font-style: "book";
 }
+/* 
 @font-face {
     font-family: "Gravity";
     src: url("./assets/fonts/Gravity-UltraLight.woff") format("woff");
     font-weight: "ultralight";
     font-style: "ultralight";
-}
+} */
 
-
+/* 
 @font-face {
     font-family: "Gravity";
     src: url("./assets/fonts/Gravity-UltraLightItalic.woff") format("woff");
@@ -60,3 +55,10 @@
     font-weight: "lightintalic";
     font-style: "lightintalic";
 }
+
+@font-face {
+    font-family: "Gravity";
+    src: url("./assets/fonts/Gravity-Italic.woff") format("woff");
+    font-weight: "intalic";
+    font-style: "intalic";
+} */
