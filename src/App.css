@@ -3,3 +3,33 @@
     src: url("./fonts/Gravity-Regular.otf");
     font-weight: "normal";
 }
+@font-face {
+    font-family: "Gravity";
+    src: url("./fonts/Gravity-Bold.otf");
+    font-weight: "bold";
+    font-style: "bold";
+}
+@font-face {
+    font-family: "Gravity";
+    src: url("./fonts/Gravity-Italic.otf");
+    font-weight: "intalic";
+    font-style: "intalic";
+}
+@font-face {
+    font-family: "Gravity";
+    src: url("./fonts/Gravity-Light.otf");
+    font-weight: "light";
+    font-style: "light";
+}
+@font-face {
+    font-family: "Gravity";
+    src: url("./fonts/Gravity-Book.otf");
+    font-weight: "book";
+    font-style: "book";
+}
+@font-face {
+    font-family: "Gravity";
+    src: url("./fonts/Gravity-UltraLight.otf");
+    font-weight: "ultralight";
+    font-style: "ultralight";
+}
