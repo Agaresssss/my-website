@@ -1,36 +1,36 @@
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts/Gravity-Regular.woff") format("woff");
+    src: url("src/assets/fonts/Gravity-Regular.woff") format("woff");
     font-weight: "normal";
     font-style: "normal";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts/Gravity-Bold.woff") format("woff");
+    src: url("src/assets/fonts/Gravity-Bold.woff") format("woff");
     font-weight: "bold";
     font-style: "bold";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts//Gravity-Italic.woff") format("woff");
+    src: url("src/assets/fonts//Gravity-Italic.woff") format("woff");
     font-weight: "intalic";
     font-style: "intalic";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts/Gravity-Light.woff") format("woff");
+    src: url("src/assets/fonts/Gravity-Light.woff") format("woff");
     font-weight: "light";
     font-style: "light";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts/Gravity-Book.woff") format("woff");
+    src: url("src/assets/fonts/Gravity-Book.woff") format("woff");
     font-weight: "book";
     font-style: "book";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts/Gravity-UltraLight.woff") format("woff");
+    src: url("src/assets/fonts/Gravity-UltraLight.woff") format("woff");
     font-weight: "ultralight";
     font-style: "ultralight";
 }
@@ -38,25 +38,25 @@
 
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts/Gravity-UltraLightItalic.woff") format("woff");
+    src: url("src/assets/fonts/Gravity-UltraLightItalic.woff") format("woff");
     font-weight: "ultralightintalic";
     font-style: "ultralightintalic";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts/Gravity-BookItalic.woff") format("woff");
+    src: url("src/assets/fonts/Gravity-BookItalic.woff") format("woff");
     font-weight: "bookintalic";
     font-style: "bookintalic";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts/Gravity-BoldItalic.woff") format("woff");
+    src: url("src/assets/fonts/Gravity-BoldItalic.woff") format("woff");
     font-weight: "boldintalic";
     font-style: "boldintalic";
 }
 @font-face {
     font-family: "Gravity";
-    src: url("./assets/fonts//Gravity-LightItalic.woff") format("woff");
+    src: url("src/assets/fonts//Gravity-LightItalic.woff") format("woff");
     font-weight: "lightintalic";
     font-style: "lightintalic";
 }
