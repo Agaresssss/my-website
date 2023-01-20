@@ -6,6 +6,9 @@ export const PersonalData = {
     },
     name: "Phuettipol Jitjaroenkit",
     imagePath: "/DSCF1733_20.jpg",
+    languages: [
+        "HTML","CSS","JavaScript","MySQL","Python","Java","Typescript"
+    ],
     dob: new Date(2001, 2, 14),
     education: [
         {

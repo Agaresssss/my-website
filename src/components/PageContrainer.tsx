@@ -1,20 +1,11 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  Center,
-  Button,
-  ButtonGroup,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const PageContainer = () => {
   return (
-    <Center sx={layout} bg="#17141B">
-      <Box w="80%" >
+    <Center sx={layout} bg="#17141B" >
+      <Box w="80%" minW="70%">
         <Navbar />
         <Outlet />
       </Box>

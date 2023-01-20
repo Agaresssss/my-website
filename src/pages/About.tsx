@@ -56,6 +56,7 @@ type propsType = {
     name: string;
     education: string[] | any;
     imagePath: string;
+    languages: string[];
     dob: Date;
     interests: {
       icon: string;
@@ -108,14 +109,15 @@ const About = ({ data }: propsType) => {
                 PROFILE
               </Heading>
               <Text textAlign="justify" fontFamily="Gravity Light">
-                Hello, everyone. My name is
+                Hello, everyone. My name is{"   "}
+                
                 <Text
                   as="span"
                   fontSize="22px"
-                  fontWeight="bold"
+                 fontFamily={"Gravity Bold"}
                   color="#FFC107"
                 >
-                  {data.name}
+                &nbsp;{data.name}
                 </Text>
                 , you can call me Ball. I am a student at King Mongkut's
                 University of Technology Thonburi, majoring in Computer
@@ -135,24 +137,20 @@ const About = ({ data }: propsType) => {
                     Age : {currentDay.getFullYear() - data.dob.getFullYear()}{" "}
                   </Text>
                 </ListItem>
-                <ListItem>
-                  <Text sx={textLayout}>Tel : +66 87 653 2059</Text>
-                </ListItem>
-                <ListItem>
-                  <Text sx={textLayout}>
-                    Email : phuettipol.jjrk@mail.kmutt.ac.th
-                  </Text>
-                </ListItem>
               </UnorderedList>
-              <Button
-                marginTop="40px"
-                sx={buttonStyle}
-                onClick={() => {
-                  navigate("/contact");
-                }}
+              <Heading
+                color="#FFFFFF"
+                fontSize="30px"
+                fontFamily={"Gravity Bold"}
+                marginTop="20px"
               >
-                More contacts
-              </Button>
+                LANGUAGES
+              </Heading>  
+              <UnorderedList marginTop="20px">
+                  {data.languages.map((language,index) => {
+                    return <ListItem key = {index} ><Text sx={textLayout}>{language}</Text></ListItem>;
+                  })}
+              </UnorderedList>
             </Container>
           </GridItem>
           <GridItem colSpan={3} rowSpan={3}>
@@ -177,7 +175,7 @@ const About = ({ data }: propsType) => {
         </Grid>
       </Zone>
 
-      <Heading marginTop="80px" sx={headSytle}>
+      <Heading marginTop="200px" sx={headSytle}>
         EDUCATION
       </Heading>
       <Box
@@ -243,3 +241,14 @@ let buttonStyle = {
 };
 
 export default About;
+
+
+// <Button
+//                 marginTop="40px"
+//                 sx={buttonStyle}
+//                 onClick={() => {
+//                   navigate("/contact");
+//                 }}
+//               >
+//                 More contacts
+//               </Button>

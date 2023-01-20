@@ -50,6 +50,6 @@ let timelineItemName = {
   textAlign: "center",
   fontSize: "30px",
   color: "#FFFFFF",
-  fontWeight: "bold",
-  fontFamily: "Gravity",
+  fontWeight: "normal",
+  fontFamily: "Gravity Bold",
 };
