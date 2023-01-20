@@ -98,26 +98,25 @@ export default Navbar;
 
 let headerFont = {
   color: "#FFFFFF",
-  fontFamily: "Gravity",
-  fontWeight: "bold ",
-  fontStyle: "light",
+  fontFamily: "Gravity Bold",
   fontSize: "22px",
   letterSpacing: "0.33em",
 };
 
 let menuFont = {
   color: "#FFFFFF",
-  fontFamily: "Gravity",
+  fontFamily: "Gravity Regular",
+  fontWeight: "normal",
   fontStyle: "normal",
   fontSize: "16px",
   letterSpacing: "0.2em",
   transition : "all 0.3",
   _hover: {
-    fontWeight: "",
+    fontFamily: "Gravity Bold",
     textShadow: "0px 0px 10px rgba(255, 255, 255);",
   },
   _active: {
-    fontWeight: "bold",
+    fontFamily: "Gravity Bold",
     textShadow: "0px 0px 10px rgba(255, 255, 255);",
   },
 };

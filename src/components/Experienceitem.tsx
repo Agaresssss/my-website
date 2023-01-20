@@ -87,8 +87,9 @@ const Experienceitem = ({ img, title, description, animation }: propsType) => {
 
 let paragraphStyle = {
   transition: "0.5s",
-  fontFamily: "Gravity",
-  fontWeight: "400",
+  fontFamily: "Gravity Regular",
+  fontStyle: "normal",
+  fontWeight: "normal",
   fontSize: "14px",
   color: "#FFFFFF",
   opacity: "0",
@@ -104,8 +105,8 @@ let buttonStyle = {
   transition: "0.5s",
   backgroundSize: "200% auto",
   letterSpacing: "0.2em",
-  fontFamily: "Gravity",
-  fontWeight: "bold",
+  fontFamily: "Gravity Bold",
+  fontWeight: "normal",
   fontSize: "14px",
   _hover: {
     backgroundPosition: "right center",

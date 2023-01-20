@@ -98,7 +98,7 @@ const About = ({ data }: propsType) => {
             </Center>
           </GridItem>
           <GridItem colSpan={3}>
-            <Container color="#FFFFFF" fontSize="18px" fontWeight="light">
+            <Container color="#FFFFFF" fontSize="18px" fontFamily='Gravity Light' fontStyle='normal' fontWeight='normal'>
               <Heading
                 color="#FFFFFF"
                 fontSize="30px"
@@ -107,8 +107,8 @@ const About = ({ data }: propsType) => {
               >
                 PROFILE
               </Heading>
-              <Text textAlign="justify">
-                Hello, everyone. My name is{" "}
+              <Text textAlign="justify" fontFamily="Gravity Light">
+                Hello, everyone. My name is
                 <Text
                   as="span"
                   fontSize="22px"
@@ -204,15 +204,17 @@ let imgLayout = {
 };
 let textLayout = {
   color: "#FFFFFF",
-  fontWeight: "light",
-  fontFamily: "Gravity",
+  fontStyle: "normal",
+  fontWeight: "normal",
+  fontFamily: "Gravity Light",
 };
 
 let headSytle = {
   color: "#FFFFFF",
   fontSize: "56px",
-  fontWeight: "bold",
-  fontFamily: "Gravity",
+  fontWeight: "normal",
+  fontStyle: "normal",
+  fontFamily: "Gravity Bold",
   textAlign: "center",
   letterSpacing: "0.33em",
 };
@@ -225,8 +227,9 @@ let buttonStyle = {
   transition: "0.5s",
   backgroundSize: "200% auto",
   letterSpacing: "0.2em",
-  fontFamily: "Gravity",
-  fontWeight: "bold",
+  fontFamily: "Gravity Bold",
+  fontWeight: "normal",
+  fontStyle: "normal",
   fontSize: "14px",
   _hover: {
     backgroundPosition: "right center",

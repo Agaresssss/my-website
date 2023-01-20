@@ -1,22 +1,22 @@
 @font-face {
-    font-family: "Gravity";
+    font-family: 'Gravity Regular';
     src: url("./assets/fonts/Gravity-Regular.woff") format("woff");
     font-weight: "normal";
     font-style: "normal";
 }
 @font-face {
-    font-family: "Gravity";
+    font-family: 'Gravity Bold';
     src: url("./assets/fonts/Gravity-Bold.woff") format("woff");
-    font-weight: "bold";
-    font-style: "bold";
+    font-weight: "normal";
+    font-style: "normal";
 }
-/* 
+
 @font-face {
-    font-family: "Gravity";
+    font-family: "Gravity Light";
     src: url("./assets/fonts/Gravity-Light.woff") format("woff");
-    font-weight: "light";
-    font-style: "light";
-}
+    font-weight: "normal";
+    font-style: "normal";
+}/* 
 @font-face {
     font-family: "Gravity";
     src: url("./assets/fonts/Gravity-Book.woff") format("woff");

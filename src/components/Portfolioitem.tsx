@@ -34,7 +34,7 @@ const getPicture = (path: String | undefined, picture: any) => {
           as={motion.img}
           sx={imgStyle}
           objectFit="contain"
-          src={`src/assets/portfolio-pic/${path}/0${item}.jpg`}
+          src={`${path}/0${item}.jpg`}
         />
       </Box>
     );
@@ -151,8 +151,7 @@ let textStyle = {
 let paragraphStyle = {
   textAlign: "justify",
   transition: "0.5s",
-  fontFamily: "Gravity",
-  fontWeight: "400",
+  fontFamily: "Gravity Regular",
   fontSize: "18px",
   color: "#FFFFFF",
   opacity: "0.8",
